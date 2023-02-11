@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from core.helpers import Helper
 from PyQt5.QtGui import QValidator, QStandardItemModel
 from PyQt5.QtCore import QAbstractTableModel, Qt
+import core.import_project as browse
 
 
 class MainWindow(QMainWindow):
@@ -26,6 +27,8 @@ class MainWindow(QMainWindow):
         self.ui.btn_equipment_update.clicked.connect(lambda: self.populate_equipment_combobox())
 
         self.ui.btn_equipment_select.clicked.connect(lambda: self.add_equipment())
+        
+        self.ui.btn_browse.clicked.connect(lambda: self.load_project())
 
     ### validate the input is an integer number between 0 and 100 to represent the percentage
     def validate_percentage_input(self):
@@ -52,7 +55,9 @@ class MainWindow(QMainWindow):
         # table_model = EquipmentTableViewModel([[selected_equipment,2]])
         # self.ui.tv_equipment.setModel(table_model) 
   
-
+    def load_project(self):
+        file_name = browse.import_project()
+        self.ui.le_import.setText(file_name)
         
 
 
