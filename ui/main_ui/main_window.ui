@@ -38,160 +38,15 @@
     <property name="documentMode">
      <bool>true</bool>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="tab_Pit">
      <attribute name="title">
-      <string>Project</string>
+      <string>Pit</string>
      </attribute>
-     <widget class="QLineEdit" name="le_import">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>40</y>
-        <width>301</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lb_import">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>45</y>
-        <width>121</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Import project</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lb_import_2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>195</y>
-        <width>121</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Create  project</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_create">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>190</y>
-        <width>301</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_browse">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>90</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_import">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>90</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Import</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_create">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>240</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Create</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_assumption">
-     <attribute name="title">
-      <string>Assumption</string>
-     </attribute>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>820</x>
-        <y>460</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>920</x>
-        <y>460</y>
-        <width>47</width>
-        <height>13</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>this is the label</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="lbl_import_duties">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>50</y>
+        <x>0</x>
+        <y>80</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -208,8 +63,8 @@
      <widget class="QLabel" name="lbl_overhead">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>80</y>
+        <x>0</x>
+        <y>110</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -226,8 +81,8 @@
      <widget class="QLabel" name="lbl_markup_capital">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>110</y>
+        <x>0</x>
+        <y>140</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -244,8 +99,8 @@
      <widget class="QLineEdit" name="le_duties">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>50</y>
+        <x>150</x>
+        <y>80</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -254,8 +109,8 @@
      <widget class="QLineEdit" name="le_overhead">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>80</y>
+        <x>150</x>
+        <y>110</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -264,8 +119,8 @@
      <widget class="QLineEdit" name="le_markup_capital">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>110</y>
+        <x>150</x>
+        <y>140</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -274,8 +129,8 @@
      <widget class="QLabel" name="lbl_equipment_name">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>20</y>
+        <x>0</x>
+        <y>50</y>
         <width>141</width>
         <height>21</height>
        </rect>
@@ -292,8 +147,8 @@
      <widget class="QComboBox" name="cb_equipment_name">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>20</y>
+        <x>70</x>
+        <y>50</y>
         <width>211</width>
         <height>21</height>
        </rect>
@@ -311,8 +166,8 @@
      <widget class="QPushButton" name="btn_equipment_update">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>20</y>
+        <x>290</x>
+        <y>50</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -324,8 +179,8 @@
      <widget class="QPushButton" name="btn_equipment_select">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>20</y>
+        <x>380</x>
+        <y>50</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -337,14 +192,42 @@
      <widget class="QTableView" name="tv_equipment">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>20</y>
+        <x>470</x>
+        <y>50</y>
         <width>601</width>
         <height>291</height>
        </rect>
       </property>
       <property name="gridStyle">
        <enum>Qt::SolidLine</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_pit_name">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Pit Name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_pit_name">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -425,6 +308,8 @@
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionClose"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionImport"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -461,6 +346,16 @@
   <action name="actionPaste">
    <property name="text">
     <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
    </property>
   </action>
  </widget>
