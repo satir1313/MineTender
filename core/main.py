@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from core.helpers import Helper
 from PyQt5.QtGui import QValidator, QStandardItemModel
 from PyQt5.QtCore import QAbstractTableModel, Qt
-from core.import_project import LoadProject
+from core.project_services import LoadProject
 
 
 class MainWindow(QMainWindow):
@@ -29,6 +29,8 @@ class MainWindow(QMainWindow):
         self.ui.btn_equipment_select.clicked.connect(lambda: self.add_equipment())
 
         self.ui.actionImport.triggered.connect(lambda: self.load_project())
+        
+        self.ui.actionNew.triggered.connect(lambda: self.create_project())
 
     ### validate the input is an integer number between 0 and 100 to represent the percentage
     def validate_percentage_input(self):
