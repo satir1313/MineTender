@@ -6,7 +6,8 @@ from core.helpers import Helper
 from PyQt5.QtGui import QValidator, QStandardItemModel
 from PyQt5.QtCore import QAbstractTableModel, Qt
 from core.project_services import LoadProject
-
+from core.db_context import DB_context as db
+import os
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -22,7 +23,12 @@ class MainWindow(QMainWindow):
 
         applicationName = "Tend Mine"
         self.setWindowTitle(applicationName)
-        self.ui.pushButton.clicked.connect(lambda: self.update_label()) 
+        
+        if not os.path.exists('.database'):
+            os.mkdir('.database')
+            
+        self.database  = db('.database')
+        self.database.create_tables()
 
         self.ui.btn_equipment_update.clicked.connect(lambda: self.populate_equipment_combobox())
 
@@ -38,15 +44,17 @@ class MainWindow(QMainWindow):
         val = QtGui.QRegExpValidator(rx)
         return val
 
-    def update_label(self):
-        self.ui.label.setText("text has been changed!")
-
     def populate_equipment_combobox(self):
-        items = Helper.read_equipment_excel()
+        rows = db.get_all(self.database, 'Equipment')
         self.ui.cb_equipment_name.clear()
-        if items is None:
+    
+        if rows is None:
             pass
-        self.ui.cb_equipment_name.addItems(items)
+        
+        for item in rows:
+            self.ui.cb_equipment_name.addItem(f'{item[1]} {item[2]}')
+            
+        db.close(self.database)
 
     def validate_assumptions(self):        
         self.ui.le_duties.setValidator(self.validate_percentage_input())

@@ -15,8 +15,8 @@ class LoadProject():
         
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        file_path, _ = QFileDialog.getSaveFileName(None, "Save File", "", "All Files(*);;Text Files(*.txt);;Tender Files(*.mtn)", options = options)
-
+        file_path, _ = QFileDialog.getSaveFileName(None, "Save File", "", "Tender Files(*.mtn)", options = options)
+        
         # save file on local disk
         if file_path:
             shutil.copyfile('./data.pickle', file_path + '.mtn')
