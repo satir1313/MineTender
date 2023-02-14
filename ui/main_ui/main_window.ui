@@ -106,16 +106,6 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="le_duties_2">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>110</y>
-        <width>41</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="le_markup_capital">
       <property name="geometry">
        <rect>

@@ -11,6 +11,7 @@ from core.db_context import DB_context as db
 sys.path.append('../../')
 import core.config.config as config
 
+# create a global project for the rest of life of instance of application
 config.init()
 
 class MainWindow(QMainWindow):
@@ -42,7 +43,7 @@ class MainWindow(QMainWindow):
 
         self.ui.actionImport.triggered.connect(lambda: self.load_project())
         
-        self.ui.actionNew.triggered.connect(lambda: self.create_project())
+        self.ui.actionSave.triggered.connect(lambda: self.create_project())
 
     ### validate the input is an integer number between 0 and 100 to represent the percentage
     def validate_percentage_input(self):
@@ -69,14 +70,16 @@ class MainWindow(QMainWindow):
         selected_equipment = self.ui.cb_equipment_name.currentText()
         # to use QTableView see: https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QTableView.html
         # table_model = EquipmentTableViewModel([[selected_equipment,2]])
-        # self.ui.tv_equipment.setModel(table_model) 
-      
+        # self.ui.tv_equipment.setModel(table_model)
+         
+    # set a pit attributes from user input
     def create_pit(self):
         pit_name = self.ui.le_pit_name.text()
         bcm = self.ui.le_bcm.text()
         duties = self.ui.le_duties.text()
         overhead = self.ui.le_overhead.text()
         markup = self.ui.le_markup_capital.text()
+        # craete a pit for a project
         create_pit(pit_name, bcm, duties, overhead, markup)
     
         
@@ -84,6 +87,12 @@ class MainWindow(QMainWindow):
     # load existing project
     def load_project(self):
         LoadProject.import_project()
+        self.ui.le_pit_name.setText(config.project.pits[0].name)
+        self.ui.le_bcm.setText(config.project.pits[0].bcm)
+        self.ui.le_duties.setText(config.project.pits[0].duties)
+        self.ui.le_overhead.setText(config.project.pits[0].overhead)
+        self.ui.le_markup_capital.setText(config.project.pits[0].markup)
+
     
     # create a new project
     def create_project(self):
