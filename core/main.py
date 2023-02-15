@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 from ui.main_ui.gui import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
@@ -76,11 +77,12 @@ class MainWindow(QMainWindow):
          
     # set a pit attributes from user input
     def create_pit(self):
-        pit_name = self.ui.le_pit_name.text()
-        bcm = self.ui.le_bcm.text()
-        duties = self.ui.le_duties.text()
-        overhead = self.ui.le_overhead.text()
-        markup = self.ui.le_markup_capital.text()
+        rand = random.randint(1001, 10001)
+        pit_name = self.ui.le_pit_name.text() if self.ui.le_pit_name.text() else f'default_{rand}'
+        bcm = self.ui.le_bcm.text() if self.ui.le_bcm.text() else '0.0'
+        duties = self.ui.le_duties.text() if self.ui.le_duties.text() else '0.0'
+        overhead = self.ui.le_overhead.text() if self.ui.le_overhead.text() else '0.0'
+        markup = self.ui.le_markup_capital.text() if self.ui.le_markup_capital.text() else '0.0'
         # craete a pit for a project
         create_pit(pit_name, bcm, duties, overhead, markup)
     
@@ -89,11 +91,12 @@ class MainWindow(QMainWindow):
     # load existing project
     def load_project(self):
         LoadProject.import_project()
-        self.ui.le_pit_name.setText(config.project.pits[0].name)
-        self.ui.le_bcm.setText(config.project.pits[0].bcm)
-        self.ui.le_duties.setText(config.project.pits[0].duties)
-        self.ui.le_overhead.setText(config.project.pits[0].overhead)
-        self.ui.le_markup_capital.setText(config.project.pits[0].markup)
+        if config.project is not None and len(config.project.pits) > 0:
+            self.ui.le_pit_name.setText(config.project.pits[0].name)
+            self.ui.le_bcm.setText(config.project.pits[0].bcm)
+            self.ui.le_duties.setText(config.project.pits[0].duties)
+            self.ui.le_overhead.setText(config.project.pits[0].overhead)
+            self.ui.le_markup_capital.setText(config.project.pits[0].markup)
 
     
     # create a new project
