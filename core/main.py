@@ -65,6 +65,8 @@ class MainWindow(QMainWindow):
 
     def validate_assumptions(self):        
         self.ui.le_duties.setValidator(self.validate_percentage_input())
+        self.ui.le_overhead.setValidator(self.validate_percentage_input())
+        self.ui.le_markup_capital.setValidator(self.validate_percentage_input())
 
     def add_equipment(self):
         selected_equipment = self.ui.cb_equipment_name.currentText()
